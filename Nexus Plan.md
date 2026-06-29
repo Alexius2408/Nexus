@@ -16,3 +16,8 @@
 	- Rooms
 	- Home Seite mit allen rooms
 	- Roomsconfiguration (Farben ändern)
+
+- Settings
+	- Font
+	- Text-Color
+	- Backgroundcolor
