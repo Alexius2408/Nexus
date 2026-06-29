@@ -1,6 +1,7 @@
 const welcome_text = document.getElementById("welcome-text");
 const input_box = document.getElementById("messageDiv");
 const logo_text = document.querySelector(".logo");
+const chat_name = document.getElementById("chat-name")
 
 async function getRoomMessages(roomId) {
   if (!roomId) throw new Error("roomId required");
@@ -39,6 +40,7 @@ function addMessage_to_chat(data, my_messages) {
 logo_text.addEventListener("click", () => {
   welcome_text.classList.remove("hidden");
   input_box.classList.add("hidden");
+  chat_name.textContent = ""
 });
 
 const chatRoomsContainer = document.getElementById("chat-rooms");
