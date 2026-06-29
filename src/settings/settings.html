@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Einstellungen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Ne<span>x</span>us</div>
+        <a href="../main.html" class="login-btn">Zurück</a>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>DESIGN <span>ANPASSEN</span></h1>
+                <h2>PASSE NEXUS AN ZU DEINEM STYLE</h2>
+                <p>Ändere den Look der gesamten Website. Alle Änderungen werden sofort im Browser gespeichert und auf alle Unterseiten angewendet.</p>
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <div class="settings-wrapper">
+                
+                <div class="setting-item">
+                    <label for="bg-color">Hintergrundfarbe</label>
+                    <select id="bg-color">
+                        <option value="#0B1215">Nexus Deep Black (Standard)</option>
+                        <option value="#1a1a24">Midnight Blue</option>
+                        <option value="#222222">Dark Gray</option>
+                        <option value="#FAF9F6">Light Mode White (Achtung, hell!)</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="text-color">Schriftfarbe</label>
+                    <select id="text-color">
+                        <option value="#FAF9F6">Nexus Off-White (Standard)</option>
+                        <option value="#ff6600">Nexus Orange</option>
+                        <option value="#ffffff">Pure White</option>
+                        <option value="#0B1215">Deep Black (Für hellen Hintergrund)</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="font-family">Schriftart (Haupttext)</label>
+                    <select id="font-family">
+                        <option value="'Segoe UI', Arial, sans-serif">Modern / Clean (Standard)</option>
+                        <option value="'Arial Black', Impact, sans-serif">Wuchtig / Bold</option>
+                        <option value="'Courier New', Courier, monospace">Sci-Fi Code / Retro</option>
+                        <option value="Georgia, serif">Elegant / Klassisch</option>
+                    </select>
+                </div>
+
+                <div class="settings-actions">
+                    <button id="reset-btn" class="reset-btn">Standard wiederherstellen</button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Nexus. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

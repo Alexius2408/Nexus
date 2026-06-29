@@ -10,26 +10,37 @@
     --black: #0B1215;
     --white: #FAF9F6;
     --gray-text: #a0a0a0;
+
+    /* GEÄNDERT: Dynamische Variablen für die Settings (mit Standardwerten) */
+    --dynamic-bg: var(--black);
+    --dynamic-text: var(--white);
+    --dynamic-font: 'Arial Black', Impact, sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial Black', Impact, sans-serif;
+    /* GEÄNDERT: Nutzt jetzt die variable Schriftart */
+    font-family: var(--dynamic-font); 
 }
 
 body {
-    background-color: var(--black);
+    /* GEÄNDERT: Nutzt jetzt die variablen Farben */
+    background-color: var(--dynamic-bg);
+    color: var(--dynamic-text);
+    
     background-image: 
         radial-gradient(circle at 10% 20%, rgba(255, 102, 0, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(255, 102, 0, 0.05) 0%, transparent 40%);
-    color: var(--white);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* GEÄNDERT: Sorgt für ein weiches Überblenden, wenn man die Farbe in den Settings ändert */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
+/* HEADER (Bleibt dunkel, auch im Light-Mode, für einen schönen Kontrast) */
 header {
     background-color: rgba(11, 18, 21, 0.95);
     backdrop-filter: blur(10px);
@@ -49,13 +60,14 @@ header {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--white);
+    color: var(--white); /* Logo bleibt immer weiß */
 }
 
 .logo span {
     font-family: 'Rostex', sans-serif;
     color: var(--orange);
 }
+
 .login-btn {
     background-color: transparent;
     color: var(--orange);
@@ -100,7 +112,8 @@ header {
     font-size: 56px;
     letter-spacing: -1px;
     line-height: 1.1;
-    color: var(--white);
+    /* GEÄNDERT: Passt sich der Textfarbe an */
+    color: var(--dynamic-text); 
     margin-bottom: 10px;
 }
 
@@ -167,8 +180,9 @@ header {
 }
 
 .slide-caption {
-    background-color: var(--black);
-    color: var(--white);
+    /* GEÄNDERT: Passt sich dem Hintergrund und Text an */
+    background-color: var(--dynamic-bg);
+    color: var(--dynamic-text);
     padding: 15px;
     text-align: center;
     font-size: 16px;
@@ -199,6 +213,7 @@ header {
     border-radius: 6px;
 }
 
+/* FOOTER (Bleibt dunkel, auch im Light-Mode) */
 footer {
     background-color: rgba(11, 18, 21, 0.95);
     color: var(--white);
