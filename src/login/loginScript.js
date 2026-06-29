@@ -60,12 +60,14 @@ async function login(event) {
   if (tryUsername) {
     if (tryUsername === shaPassword) {
       window.location.href = "../home/home.html"
+      localStorage.setItem("currentUser", usernameInput.value)
       return;
     } else {
       failedLoginText.classList.remove("hidden");
     }
   } else {
     localStorage.setItem(usernameInput.value, shaPassword);
+    localStorage.setItem("currentUser", usernameInput.value)
     window.location.href = "../home/home.html"
     return;
   }
