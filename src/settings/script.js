@@ -1,50 +1,53 @@
 const bgSelect = document.getElementById('bg-color');
 const textSelect = document.getElementById('text-color');
 const fontSelect = document.getElementById('font-family');
+const accentSelect = document.getElementById('accent-color');
 const resetBtn = document.getElementById('reset-btn');
 
-// 1. Einstellungen aus dem Speicher laden und anwenden
+function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `${r}, ${g}, ${b}`;
+}
+
 function loadSettings() {
     const savedBg = localStorage.getItem('nexus-bg') || '#0B1215';
     const savedText = localStorage.getItem('nexus-text') || '#FAF9F6';
     const savedFont = localStorage.getItem('nexus-font') || "'Segoe UI', Arial, sans-serif";
+    const savedAccent = localStorage.getItem('nexus-accent') || '#ff6600';
+    const savedAccentRgb = localStorage.getItem('nexus-accent-rgb') || '255, 102, 0';
 
-    // CSS Variablen im Dokument überschreiben
     document.documentElement.style.setProperty('--dynamic-bg', savedBg);
     document.documentElement.style.setProperty('--dynamic-text', savedText);
     document.documentElement.style.setProperty('--dynamic-font', savedFont);
+    document.documentElement.style.setProperty('--orange', savedAccent);
+    document.documentElement.style.setProperty('--orange-rgb', savedAccentRgb);
 
-    // Dropdowns auf den gespeicherten Wert setzen
     bgSelect.value = savedBg;
     textSelect.value = savedText;
     fontSelect.value = savedFont;
+    accentSelect.value = savedAccent;
 }
 
-// 2. Einzelne Einstellung speichern
-function saveSetting(key, value, cssVariable) {
+function saveSetting(key, value, cssVariable, isAccent = false) {
     localStorage.setItem(key, value);
     document.documentElement.style.setProperty(cssVariable, value);
+    if (isAccent) {
+        const rgb = hexToRgb(value);
+        localStorage.setItem('nexus-accent-rgb', rgb);
+        document.documentElement.style.setProperty('--orange-rgb', rgb);
+    }
 }
 
-// Event Listener für Änderungen an den Dropdowns
-bgSelect.addEventListener('change', (e) => {
-    saveSetting('nexus-bg', e.target.value, '--dynamic-bg');
-});
-
-textSelect.addEventListener('change', (e) => {
-    saveSetting('nexus-text', e.target.value, '--dynamic-text');
-});
-
-fontSelect.addEventListener('change', (e) => {
-    saveSetting('nexus-font', e.target.value, '--dynamic-font');
-});
+bgSelect.addEventListener('change', (e) => saveSetting('nexus-bg', e.target.value, '--dynamic-bg'));
+textSelect.addEventListener('change', (e) => saveSetting('nexus-text', e.target.value, '--dynamic-text'));
+fontSelect.addEventListener('change', (e) => saveSetting('nexus-font', e.target.value, '--dynamic-font'));
+accentSelect.addEventListener('change', (e) => saveSetting('nexus-accent', e.target.value, '--orange', true));
 
 resetBtn.addEventListener('click', () => {
-    localStorage.removeItem('nexus-bg');
-    localStorage.removeItem('nexus-text');
-    localStorage.removeItem('nexus-font');
-    loadSettings(); // Lädt die Standardwerte neu
+    localStorage.clear();
+    loadSettings();
 });
 
-// Beim Laden der Seite Einstellungen direkt ausführen
 window.addEventListener('DOMContentLoaded', loadSettings);

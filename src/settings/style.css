@@ -5,7 +5,23 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Game_Paused';
+    src: url('../assets/fonts/Game_Paused/Game_Paused.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Orbitron_Light';
+    src: url('../assets/fonts/Orbitron/Orbitron_Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Orbitron_Medium';
+    src: url('../assets/fonts/Orbitron/Orbitron_Medium.ttf') format('truetype');
+}
+
 :root {
+    /* Diese Variable wird durch dein JS überschrieben, wenn du die Farbe änderst */
     --orange: #ff6600;
     --gray-text: #a0a0a0;
     
@@ -22,7 +38,6 @@
 }
 
 body {
-    /* Nutzt die dynamischen Variablen */
     background-color: var(--dynamic-bg);
     color: var(--dynamic-text);
     font-family: var(--dynamic-font);
@@ -32,14 +47,14 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* HINTERGRUND GLOW (Nur im Darkmode schön, passt sich dezent an) */
 body::before {
     content: "";
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
+    /* Hier wurde das feste Orange durch die Variable ersetzt */
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 102, 0, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(255, 102, 0, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--orange), transparent 94%) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--orange), transparent 96%) 0%, transparent 40%);
     z-index: -1;
     pointer-events: none;
 }
@@ -51,7 +66,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    border-bottom: 2px solid rgba(255, 102, 0, 0.2);
+    border-bottom: 2px solid var(--orange); /* VARIABLE EINGESETZT */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -88,7 +103,7 @@ header {
 .login-btn:hover {
     background-color: var(--orange);
     color: #FAF9F6;
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 0 15px var(--orange); /* VARIABLE EINGESETZT */
 }
 
 .main-content {
@@ -148,7 +163,7 @@ header {
     background-color: rgba(250, 249, 246, 0.02);
     border-radius: 12px;
     padding: 40px;
-    border: 1px solid rgba(255, 102, 0, 0.3);
+    border: 1px solid var(--orange); /* VARIABLE EINGESETZT */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
@@ -172,7 +187,7 @@ header {
 .setting-item select {
     background-color: #0B1215;
     color: #FAF9F6;
-    border: 1px solid rgba(255, 102, 0, 0.5);
+    border: 1px solid var(--orange); /* VARIABLE EINGESETZT */
     padding: 12px;
     font-size: 16px;
     border-radius: 6px;
@@ -183,7 +198,7 @@ header {
 
 .setting-item select:focus {
     border-color: var(--orange);
-    box-shadow: 0 0 10px rgba(255, 102, 0, 0.2);
+    box-shadow: 0 0 10px var(--orange); /* VARIABLE EINGESETZT */
 }
 
 .settings-actions {
@@ -193,9 +208,9 @@ header {
 }
 
 .reset-btn {
-    background-color: rgba(255, 102, 0, 0.1);
+    background-color: color-mix(in srgb, var(--orange), transparent 90%);
     color: #FAF9F6;
-    border: 1px solid rgba(255, 102, 0, 0.4);
+    border: 1px solid var(--orange);
     padding: 12px 20px;
     font-size: 14px;
     font-weight: bold;
@@ -205,7 +220,7 @@ header {
 }
 
 .reset-btn:hover {
-    background-color: rgba(255, 102, 0, 0.2);
+    background-color: color-mix(in srgb, var(--orange), transparent 80%);
     border-color: var(--orange);
 }
 
