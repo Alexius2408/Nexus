@@ -1,3 +1,11 @@
+/* 1. SCHRIFTART KORREKT REGISTRIEREN */
+@font-face {
+    font-family: 'Rostex';
+    src: url('./assets/fonts/rostex/Rostex-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* DESIGN VARIABLEN */
 :root {
     --orange: #ff6600;
@@ -14,7 +22,6 @@
 }
 
 body {
-    /* Neuer, edler Dark-Mode Hintergrund mit dezentem Orange-Glow */
     background-color: var(--black);
     background-image: 
         radial-gradient(circle at 10% 20%, rgba(255, 102, 0, 0.08) 0%, transparent 40%),
@@ -39,7 +46,9 @@ header {
     z-index: 100;
 }
 
+/* 2. SCHRIFTART RECHTSCHREIBUNG KORRIGIERT */
 .logo {
+    font-family: 'Rostex', sans-serif; /* KORRIGIERT: Jetzt auch mit "s" */
     font-size: 28px;
     font-weight: 900;
     text-transform: uppercase;
@@ -48,9 +57,9 @@ header {
 }
 
 .logo span {
+    font-family: 'Rostex', sans-serif; /* KORRIGIERT: Jetzt auch mit "s" */
     color: var(--orange);
 }
-
 .login-btn {
     background-color: transparent;
     color: var(--orange);
@@ -229,21 +238,4 @@ footer {
 
 .footer-links a:hover {
     color: var(--orange);
-}
-
-/* RESPONSIVE DESIGN (MOBILGERÄTE) */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 40px;
-    }
-    .slide img {
-        height: 300px;
-    }
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-links a {
-        margin: 0 10px;
-    }
 }
