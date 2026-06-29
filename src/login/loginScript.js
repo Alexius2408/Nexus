@@ -4,7 +4,6 @@ const passwordInput = document.getElementById("password");
 const failedLoginText = document.getElementById("loginFailed")
 
 const inputs = document.querySelectorAll("input");
-const loader = document.getElementById("loaderAnim");
 const passwordVisibilityToggle = document.querySelectorAll(
   ".passwordvisibility",
 );
@@ -33,10 +32,6 @@ passwordVisibilityToggle.forEach((element) => {
       : "●●●●●●●●●●●●●●●●●";
   });
 });
-
-loginButton.classList.remove("loginButtonLoading");
-loader.classList.add("hidden");
-loginButton.firstChild.textContent = "LOGIN";
 
 function setLoginButton() {
   failedLoginText.classList.add("hidden");
@@ -74,8 +69,6 @@ async function login(event) {
     window.location.href = "../home/home.html"
     return;
   }
-
-
 }
 
 loginButton.addEventListener("click", async (event) => {
