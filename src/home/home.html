@@ -16,8 +16,7 @@
     <div id="chat_chat-rooms">
       <aside class="sidebar">
         <h3>Rooms</h3>
-        <div id="chat-rooms">
-        </div>
+        <div id="chat-rooms"></div>
         <div id="add-new-chat">
           <svg
             id="plus-sign"
@@ -35,12 +34,38 @@
       </aside>
 
       <div class="main-content">
+        <div id="popUp" class="popoUpWindow">
+          <div class="popUpContext">
+            <div id="header">
+              <h3>Create Room</h3>
+              <svg
+                id="closeCreateChat"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
+              >
+              <title>Close Create Room</title>
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </div>
+            <div id="InputButton">
+              <input type="text" id="roomNameInput" placeholder="My Room" />
+              <button id="createRoomBtn">Create</button>
+            </div>
+          </div>
+        </div>
         <div class="box">
-          <p class="welcome-container">Welcome<br />to<br />Nexus!</p>
+          <p id="welcome-text" class="welcome-container">Welcome<br />to<br />Nexus!</p>
         </div>
       </div>
     </div>
     <script type="module" src="script.js"></script>
     <script type="module" src="create_chat_profiles.js"></script>
+    <script type="module" src="make_new_chat.js"></script>
+    <script type="module" src="create_chat.js"></script>
   </body>
 </html>

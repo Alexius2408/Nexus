@@ -24,7 +24,6 @@ async function sortRooms(rooms_data) {
 
 function colorFromIndex(index) {
   if (typeof index === "string") {
-    console.log("str");
     let num = 0;
     for (let i = 0; i < index.length; i++) {
       num += index.charCodeAt(i);
@@ -36,6 +35,11 @@ function colorFromIndex(index) {
 }
 
 rooms_data.forEach((element) => {
+  createRoomProfile(element)
+});
+
+
+export function createRoomProfile(element) {
   const maindiv = document.createElement("div");
   maindiv.id = element.id;
   maindiv.classList.add("room");
@@ -64,7 +68,7 @@ rooms_data.forEach((element) => {
 
   rooms.appendChild(maindiv);
 
-    const color = colorFromIndex(element.id);
+  const color = colorFromIndex(element.id);
 
   firstLetter.style.backgroundColor = color;
 
@@ -72,4 +76,4 @@ rooms_data.forEach((element) => {
     chat_name.textContent = element.name;
     chat_name.style.textDecorationColor = color;
   });
-});
+}
