@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus - Chat App</title>
+    <title>Nexus</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo">Ne<span>x</span>us</div>
-        <button class="login-btn">Anmelden</button>
+        <button class="login-btn" onclick="window.location.href='login/login.html'">Anmelden</button>
     </header>
 
     <main class="main-content">
         
         <section class="hero-section">
             <div class="hero-text">
-                <h1>VERBINDE DICH MIT <span>NEXUS</span></h1>
-                <h2>EINZIGARTIGER CHAT. SCHNELL. SICHER.</h2>
-                <p>Entdecke die neue Art der Kommunikation. Nexus bringt Freunde und Familie näher zusammen. Teile Momente und bleibe immer ganz nah bei deinen Liebsten.</p>
+                <h1>Chate mit deinen Freunden über  <span>NEXUS</span></h1>
+                <h2>Anonymität an erster Stelle.</h2>
+                <p>Schreibe komplett anonym mit deinen Freunden. Nexus ist komlett Open-Source. Überlassen Sie nicht mehr Ihre Daten den großen Milliarden-Konzernen.</p>
             </div>
         </section>
 
@@ -30,17 +30,17 @@
                         
                         <div class="slide">
                             <img src="" alt="Leute chatten im Café">
-                            <div class="slide-caption">Egal wo du bist: Tausche dich jederzeit mit deinen Freunden aus.</div>
+                            <div class="slide-caption">Test</div>
                         </div>
 
                         <div class="slide">
                             <img src="" alt="Freunde lachen mit Smartphone">
-                            <div class="slide-caption">Teile lustige Momente und halte die Gruppe immer up to date.</div>
+                            <div class="slide-caption">Test</div>
                         </div>
 
                         <div class="slide">
                             <img src="" alt="Unterhaltung via App">
-                            <div class="slide-caption">Lerne neue Leute kennen und genieße flüssige Audio- & Textchats.</div>
+                            <div class="slide-caption">Test</div>
                         </div>
 
                     </div>
@@ -58,7 +58,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Nexus App. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Nexus. Alle Rechte vorbehalten.</p>
             <div class="footer-links">
                 <a href="#">Kontakt</a>
                 <a href="#">Datenschutz</a>
@@ -67,24 +67,6 @@
         </div>
     </footer>
 
-    <script>
-        const track = document.getElementById('track');
-        const dots = document.querySelectorAll('.nav-dot');
-        let currentIndex = 0;
-
-        function moveToSlide(index) {
-            currentIndex = index;
-            track.style.transform = `translateX(-${index * 100}%)`;
-            
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
-        }
-
-        setInterval(() => {
-            let nextIndex = (currentIndex + 1) % 3;
-            moveToSlide(nextIndex);
-        }, 4000);
-    </script>
-
+<script src="script.js"></script>
 </body>
 </html>
