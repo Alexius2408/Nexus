@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus - Einstellungen</title>
+    <title>Nexus - Settings</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo">Ne<span>x</span>us</div>
-        <a href="../main.html" class="login-btn">Zurück</a>
+        <a href="../main.html" class="login-btn">Back</a>
     </header>
 
     <main class="main-content">
         
         <section class="hero-section">
             <div class="hero-text">
-                <h1>DESIGN <span>ANPASSEN</span></h1>
-                <h2>PASSE NEXUS AN ZU DEINEM STYLE</h2>
-                <p>Ändere den Look der gesamten Website. Alle Änderungen werden sofort im Browser gespeichert und auf alle Unterseiten angewendet.</p>
+                <h1>CUSTOMIZE <span>DESIGN</span></h1>
+                <h2>TAILOR NEXUS TO YOUR STYLE</h2>
+                <p>Change the look of the entire website. All changes are saved instantly in your browser and applied to all pages.</p>
             </div>
         </section>
 
@@ -27,9 +27,9 @@
             <div class="settings-wrapper">
                 
                 <div class="setting-item">
-                    <label for="bg-color">Hintergrundfarbe</label>
+                    <label for="bg-color">Background Color</label>
                     <select id="bg-color">
-                        <option value="#0B1215">Standard</option>
+                        <option value="#0B1215">Default</option>
                         <option value="#1a1a24">Midnight Blue</option>
                         <option value="#222222">Dark Gray</option>
                         <option value="#DBA2DB">Lavender</option>
@@ -43,9 +43,9 @@
                 </div>
 
                 <div class="setting-item">
-                    <label for="text-color">Schriftfarbe</label>
+                    <label for="text-color">Text Color</label>
                     <select id="text-color">
-                        <option value="#FAF9F6">Standard</option>
+                        <option value="#FAF9F6">Default</option>
                         <option value="#ff6600">Nexus Orange</option>
                         <option value="#ffffff">Pure White</option>
                         <option value="#0B1215">Deep Black</option>
@@ -53,12 +53,12 @@
                 </div>
 
                 <div class="setting-item">
-                    <label for="accent-color">Akzentfarbe</label>
+                    <label for="accent-color">Accent Color</label>
                     <select id="accent-color">
-                        <option value="#ff6600">Standard</option>
+                        <option value="#ff6600">Default</option>
                         <option value="#00ffcc">CyberCyan</option>
                         <option value="#ff00ff">Neon Pink</option>
-                        <option value="#39ff14">Matrix Grün</option>
+                        <option value="#39ff14">Matrix Green</option>
                         <option value="#FFB400">Gold</option>
                         <option value="#3825CC">Blue</option>
                         <option value="#CC2576">Pink</option>
@@ -76,17 +76,31 @@
                 </div>
 
                 <div class="setting-item">
-                    <label for="font-family">Schriftart</label>
+                    <label for="font-family">Font Family</label>
                     <select id="font-family">
-                        <option value="'Segoe UI', Arial, sans-serif">Standard</option>
+                        <option value="'Segoe UI', Arial, sans-serif">Default</option>
                         <option value="'Game_Paused', sans-serif">Retro-Games</option>
                         <option value="'Orbitron_Light', sans-serif">Futuristic light</option>
                         <option value="'Orbitron_Medium', sans-serif">Futuristic medium</option>
                     </select>
                 </div>
 
+                <div class="custom-color-area">
+                    <h3>Add Custom Color</h3>
+                    <div class="input-group">
+                        <input type="text" id="custom-name" placeholder="Name">
+                        <input type="text" id="custom-hex" placeholder="#FFFFFF">
+                        <select id="target-dropdown">
+                            <option value="bg">Background</option>
+                            <option value="text">Text</option>
+                            <option value="accent">Accent</option>
+                        </select>
+                        <button onclick="addCustomColor()" class="add-btn">Add</button>
+                    </div>
+                </div>
+
                 <div class="settings-actions">
-                    <button id="reset-btn" class="reset-btn">Standard wiederherstellen</button>
+                    <button id="reset-btn" class="reset-btn">Restore Defaults</button>
                 </div>
 
             </div>
@@ -96,7 +110,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Nexus. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Nexus. All rights reserved.</p>
         </div>
     </footer>
 

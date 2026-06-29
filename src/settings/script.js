@@ -28,6 +28,21 @@ function loadSettings() {
     textSelect.value = savedText;
     fontSelect.value = savedFont;
     accentSelect.value = savedAccent;
+
+    loadCustomColors();
+}
+
+function loadCustomColors() {
+    const customColors = JSON.parse(localStorage.getItem('my-custom-colors') || '[]');
+    customColors.forEach(color => {
+        const option = document.createElement('option');
+        option.value = color.hex;
+        option.textContent = color.name;
+        
+        if (color.target === 'bg') bgSelect.appendChild(option.cloneNode(true));
+        else if (color.target === 'text') textSelect.appendChild(option.cloneNode(true));
+        else accentSelect.appendChild(option.cloneNode(true));
+    });
 }
 
 function saveSetting(key, value, cssVariable, isAccent = false) {
@@ -40,6 +55,29 @@ function saveSetting(key, value, cssVariable, isAccent = false) {
     }
 }
 
+// Logik für den Hinzufügen-Button (aus der settings.html getriggert)
+window.addCustomColor = function() {
+    const name = document.getElementById('custom-name').value;
+    const hex = document.getElementById('custom-hex').value;
+    const target = document.getElementById('target-dropdown').value;
+
+    if (name && hex) {
+        const targetSelect = (target === 'bg') ? bgSelect : (target === 'text') ? textSelect : accentSelect;
+        
+        const newOption = document.createElement('option');
+        newOption.value = hex;
+        newOption.textContent = name;
+        targetSelect.appendChild(newOption);
+
+        let colors = JSON.parse(localStorage.getItem('my-custom-colors') || '[]');
+        colors.push({ name, hex, target });
+        localStorage.setItem('my-custom-colors', JSON.stringify(colors));
+
+        document.getElementById('custom-name').value = '';
+        document.getElementById('custom-hex').value = '';
+    }
+};
+
 bgSelect.addEventListener('change', (e) => saveSetting('nexus-bg', e.target.value, '--dynamic-bg'));
 textSelect.addEventListener('change', (e) => saveSetting('nexus-text', e.target.value, '--dynamic-text'));
 fontSelect.addEventListener('change', (e) => saveSetting('nexus-font', e.target.value, '--dynamic-font'));
@@ -47,7 +85,7 @@ accentSelect.addEventListener('change', (e) => saveSetting('nexus-accent', e.tar
 
 resetBtn.addEventListener('click', () => {
     localStorage.clear();
-    loadSettings();
+    location.reload();
 });
 
 window.addEventListener('DOMContentLoaded', loadSettings);
