@@ -1,0 +1,15 @@
+- Color Theme:
+	- backgroundcolor
+	- Schriftfarbe
+	- Schriftart
+-
+- Eigene Ideen:
+	- Acounts
+	- Bg color changen
+	- Mobile version
+- Seiten
+	- Start-seite
+	- Accounts
+	- Rooms
+	- Home Seite mit allen rooms
+	- Roomsconfiguration
