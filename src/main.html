@@ -10,7 +10,7 @@
 
     <header>
         <div class="logo">Ne<span>x</span>us</div>
-        <button class="login-btn" onclick="window.location.href='settings/settings.html'">Anmelden</button>
+        <button id="login-btn" class="login-btn">Anmelden</button>
     </header>
 
     <main class="main-content">
@@ -47,9 +47,9 @@
                 </div>
 
                 <div class="carousel-nav">
-                    <div class="nav-dot active" onclick="moveToSlide(0)"></div>
-                    <div class="nav-dot" onclick="moveToSlide(1)"></div>
-                    <div class="nav-dot" onclick="moveToSlide(2)"></div>
+                    <div id="dot0" class="nav-dot active"></div>
+                    <div id="dot1" class="nav-dot"></div>
+                    <div id="dot2" class="nav-dot"></div>
                 </div>
             </div>
         </section>
@@ -58,7 +58,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Nexus. Alle Rechte vorbehalten.</p>
+            <p>© 2026 Nexus. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
