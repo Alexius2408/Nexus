@@ -250,3 +250,59 @@ footer {
 .footer-links a:hover {
     color: var(--orange);
 }
+
+.custom-color-area {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(250, 249, 246, 0.03);
+    border: 1px solid rgba(var(--orange-rgb), 0.3);
+    border-radius: 10px;
+}
+
+.custom-color-area h3 {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.custom-color-area input, 
+.custom-color-area select {
+    background: #0B1215;
+    color: #FAF9F6;
+    border: 1px solid rgba(var(--orange-rgb), 0.5);
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+    flex: 1;
+    min-width: 120px;
+}
+
+.custom-color-area input:focus, 
+.custom-color-area select:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 5px rgba(var(--orange-rgb), 0.3);
+}
+
+.add-btn {
+    background: var(--orange);
+    color: #0B1215;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px var(--orange);
+}
