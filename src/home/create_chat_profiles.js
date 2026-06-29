@@ -1,5 +1,7 @@
 const rooms = document.getElementById("chat-rooms");
 const chat_name = document.getElementById("chat-name");
+const welcome_text = document.getElementById("welcome-text");
+const input_box = document.getElementById("messageDiv")
 
 async function getData(arg) {
   try {
@@ -75,5 +77,8 @@ export function createRoomProfile(element) {
   nameLetter.addEventListener("click", () => {
     chat_name.textContent = element.name;
     chat_name.style.textDecorationColor = color;
+
+    welcome_text.classList.add("hidden");
+    input_box.classList.remove("hidden");
   });
 }
