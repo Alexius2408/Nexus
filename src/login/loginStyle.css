@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: clamp(320px, 88vw, 420px);
+  width: clamp(320px, 88vw, 480px);
   padding: 2.5rem 2.25rem 2.25rem;
   background: var(--box);
   border: 1px solid var(--border-orange);
@@ -253,9 +253,40 @@ button:disabled {
 
 @media (min-width: 900px) {
   .login-container {
-    min-height: 70vh;
     justify-content: center;
     gap: 0;
     padding: 3.5rem 2.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-container {
+    width: clamp(480px, 35vw, 580px);
+    padding: 4rem 3.5rem;
+    border-radius: 22px;
+  }
+
+  .logo-name {
+    font-size: 3.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .input-box input {
+    padding: 1.1rem 1.25rem;
+    font-size: 1.0625rem;
+  }
+
+  button {
+    padding: 1.1rem 1rem;
+    font-size: 1rem;
+    margin-top: 2rem;
   }
 }
