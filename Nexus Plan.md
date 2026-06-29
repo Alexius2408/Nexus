@@ -1,0 +1,24 @@
+- Color Theme:
+	- Orange ( #ff6600 )
+	- Black ( #0B1215 )
+	- White ( #FAF9F6 )
+	- backgroundcolor
+	- Schriftfarbe
+	- Schriftart
+-
+- Eigene Ideen:
+	- Acounts
+	- Bg color changen
+	- Mobile version
+- Seiten
+	- Start-seite
+	- Accounts
+	- Rooms
+	- Home Seite mit allen rooms
+	- Roomsconfiguration (Farben ändern)
+
+- Settings
+	- Font
+	- Text-Color
+	- Backgroundcolor
+ 
