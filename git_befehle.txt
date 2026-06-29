@@ -1,0 +1,10 @@
+1. Datein auf GitHub hochladen
+
+git add .
+git commit -m ""
+git push
+
+
+2. Datein von GitHub herunterladen
+
+git pull
