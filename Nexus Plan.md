@@ -1,4 +1,7 @@
 - Color Theme:
+	- Orange ( #ff6600 )
+	- Black ( #0B1215 )
+	- White ( #FAF9F6 )
 	- backgroundcolor
 	- Schriftfarbe
 	- Schriftart
