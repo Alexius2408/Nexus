@@ -12,4 +12,4 @@
 	- Accounts
 	- Rooms
 	- Home Seite mit allen rooms
-	- Roomsconfiguration
+	- Roomsconfiguration (Farben ändern)
