@@ -27,62 +27,75 @@
             <div class="settings-wrapper">
                 
                 <div class="setting-item">
-                    <label for="bg-color">Background Color</label>
-                    <select id="bg-color">
-                        <option value="#0B1215">Default</option>
-                        <option value="#1a1a24">Midnight Blue</option>
-                        <option value="#222222">Dark Gray</option>
-                        <option value="#DBA2DB">Lavender</option>
-                        <option value="#94A185">Matcha</option>
-                        <option value="#3D041A">Wine</option>
-                        <option value="#487557">Forest-Green</option>
-                        <option value="#756948">Coffee</option>
-                        <option value="#992B2B">Blood-Red</option>
-                        <option value="#316B60">Teal</option>
-                    </select>
+                    <label>Background Color</label>
+                    <div class="custom-select" id="custom-bg-select">
+                        <div class="select-selected" id="select-selected-bg">Default</div>
+                        <div class="select-items select-hide" id="select-items-bg">
+                            <div data-value="#0B1215"><span class="color-dot" style="background-color: #0B1215;"></span>Default</div>
+                            <div data-value="#1a1a24"><span class="color-dot" style="background-color: #1a1a24;"></span>Midnight Blue</div>
+                            <div data-value="#222222"><span class="color-dot" style="background-color: #222222;"></span>Dark Gray</div>
+                            <div data-value="#DBA2DB"><span class="color-dot" style="background-color: #DBA2DB;"></span>Lavender</div>
+                            <div data-value="#94A185"><span class="color-dot" style="background-color: #94A185;"></span>Matcha</div>
+                            <div data-value="#3D041A"><span class="color-dot" style="background-color: #3D041A;"></span>Wine</div>
+                            <div data-value="#487557"><span class="color-dot" style="background-color: #487557;"></span>Forest-Green</div>
+                            <div data-value="#756948"><span class="color-dot" style="background-color: #756948;"></span>Coffee</div>
+                            <div data-value="#992B2B"><span class="color-dot" style="background-color: #992B2B;"></span>Blood-Red</div>
+                            <div data-value="#316B60"><span class="color-dot" style="background-color: #316B60;"></span>Teal</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="setting-item">
-                    <label for="text-color">Text Color</label>
-                    <select id="text-color">
-                        <option value="#FAF9F6">Default</option>
-                        <option value="#ff6600">Nexus Orange</option>
-                        <option value="#ffffff">Pure White</option>
-                        <option value="#0B1215">Deep Black</option>
-                    </select>
+                    <label>Text Color</label>
+                    <div class="custom-select" id="custom-text-select">
+                        <div class="select-selected" id="select-selected-text">Default</div>
+                        <div class="select-items select-hide" id="select-items-text">
+                            <div data-value="#FAF9F6"><span class="color-dot" style="background-color: #FAF9F6;"></span>Default</div>
+                            <div data-value="#ff6600"><span class="color-dot" style="background-color: #ff6600;"></span>Nexus Orange</div>
+                            <div data-value="#ffffff"><span class="color-dot" style="background-color: #ffffff;"></span>Pure White</div>
+                            <div data-value="#0B1215"><span class="color-dot" style="background-color: #0B1215;"></span>Deep Black</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="setting-item">
-                    <label for="accent-color">Accent Color</label>
-                    <select id="accent-color">
-                        <option value="#ff6600">Default</option>
-                        <option value="#00ffcc">CyberCyan</option>
-                        <option value="#ff00ff">Neon Pink</option>
-                        <option value="#39ff14">Matrix Green</option>
-                        <option value="#FFB400">Gold</option>
-                        <option value="#3825CC">Blue</option>
-                        <option value="#CC2576">Pink</option>
-                        <option value="#A33300">Dark Orange</option>
-                        <option value="#1a1a24">Midnight Blue</option>
-                        <option value="#222222">Dark Gray</option>
-                        <option value="#DBA2DB">Lavender</option>
-                        <option value="#94A185">Matcha</option>
-                        <option value="#3D041A">Wine</option>
-                        <option value="#487557">Forest-Green</option>
-                        <option value="#756948">Coffee</option>
-                        <option value="#992B2B">Blood-Red</option>
-                        <option value="#316B60">Teal</option>
-                    </select>
+                    <label>Accent Color</label>
+                    <div class="custom-select" id="custom-accent-select">
+                        <div class="select-selected" id="select-selected-accent">Default</div>
+                        <div class="select-items select-hide" id="select-items-accent">
+                            <div data-value="#ff6600"><span class="color-dot" style="background-color: #ff6600;"></span>Default</div>
+                            <div data-value="#00ffcc"><span class="color-dot" style="background-color: #00ffcc;"></span>CyberCyan</div>
+                            <div data-value="#ff00ff"><span class="color-dot" style="background-color: #ff00ff;"></span>Neon Pink</div>
+                            <div data-value="#39ff14"><span class="color-dot" style="background-color: #39ff14;"></span>Matrix Green</div>
+                            <div data-value="#FFB400"><span class="color-dot" style="background-color: #FFB400;"></span>Gold</div>
+                            <div data-value="#3825CC"><span class="color-dot" style="background-color: #3825CC;"></span>Blue</div>
+                            <div data-value="#CC2576"><span class="color-dot" style="background-color: #CC2576;"></span>Pink</div>
+                            <div data-value="#A33300"><span class="color-dot" style="background-color: #A33300;"></span>Dark Orange</div>
+                            <div data-value="#1a1a24"><span class="color-dot" style="background-color: #1a1a24;"></span>Midnight Blue</div>
+                            <div data-value="#222222"><span class="color-dot" style="background-color: #222222;"></span>Dark Gray</div>
+                            <div data-value="#DBA2DB"><span class="color-dot" style="background-color: #DBA2DB;"></span>Lavender</div>
+                            <div data-value="#94A185"><span class="color-dot" style="background-color: #94A185;"></span>Matcha</div>
+                            <div data-value="#3D041A"><span class="color-dot" style="background-color: #3D041A;"></span>Wine</div>
+                            <div data-value="#487557"><span class="color-dot" style="background-color: #487557;"></span>Forest-Green</div>
+                            <div data-value="#756948"><span class="color-dot" style="background-color: #756948;"></span>Coffee</div>
+                            <div data-value="#992B2B"><span class="color-dot" style="background-color: #992B2B;"></span>Blood-Red</div>
+                            <div data-value="#316B60"><span class="color-dot" style="background-color: #316B60;"></span>Teal</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="setting-item">
-                    <label for="font-family">Font Family</label>
-                    <select id="font-family">
-                        <option value="'Segoe UI', Arial, sans-serif">Default</option>
-                        <option value="'Game_Paused', sans-serif">Retro-Games</option>
-                        <option value="'Orbitron_Light', sans-serif">Futuristic light</option>
-                        <option value="'Orbitron_Medium', sans-serif">Futuristic medium</option>
-                    </select>
+                    <label>Font Family</label>
+                    <div class="custom-select" id="custom-font-select">
+                        <div class="select-selected" id="select-selected-font">Default</div>
+                        <div class="select-items select-hide" id="select-items-font">
+                            <div data-value="'Segoe UI', Arial, sans-serif" style="font-family: 'Segoe UI', Arial, sans-serif;">Default</div>
+                            <div data-value="'Game_Paused', sans-serif" style="font-family: 'Game_Paused', sans-serif;">Retro-Games</div>
+                            <div data-value="'Orbitron_Light', sans-serif" style="font-family: 'Orbitron_Light', sans-serif;">Futuristic light</div>
+                            <div data-value="'Orbitron_Medium', sans-serif" style="font-family: 'Orbitron_Medium', sans-serif;">Futuristic medium</div>
+                            <div data-value="'Old', sans-serif" style="font-family: 'Old', sans-serif;">Old German</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="custom-color-area">
@@ -90,12 +103,17 @@
                     <div class="input-group">
                         <input type="text" id="custom-name" placeholder="Name">
                         <input type="text" id="custom-hex" placeholder="#FFFFFF">
-                        <select id="target-dropdown">
-                            <option value="bg">Background</option>
-                            <option value="text">Text</option>
-                            <option value="accent">Accent</option>
-                        </select>
-                        <button id="add-custom-colot-btn" class="add-btn">Add</button>
+                        
+                        <div class="custom-select" id="custom-target-select" style="flex: 1; min-width: 150px;">
+                            <div class="select-selected" id="select-selected-target" data-value="bg">Background</div>
+                            <div class="select-items select-hide" id="select-items-target">
+                                <div data-value="bg">Background</div>
+                                <div data-value="text">Text</div>
+                                <div data-value="accent">Accent</div>
+                            </div>
+                        </div>
+
+                        <button id="add-custom-color-btn" class="add-btn">Add</button>
                     </div>
                 </div>
 

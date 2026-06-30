@@ -20,12 +20,16 @@
     src: url('../assets/fonts/Orbitron/Orbitron_Medium.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Old';
+    src: url('../assets/fonts/cloister-black/CloisterBlack.ttf') format('truetype');
+}
+
 :root {
-    /* Diese Variable wird durch dein JS überschrieben, wenn du die Farbe änderst */
     --orange: #ff6600;
     --gray-text: #a0a0a0;
     
-    /* Diese Variablen verändern wir dynamisch per JS */
+    /* Dynamische Variablen für JS */
     --dynamic-bg: #0B1215;
     --dynamic-text: #FAF9F6;
     --dynamic-font: 'Segoe UI', Arial, sans-serif;
@@ -51,7 +55,6 @@ body::before {
     content: "";
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    /* Hier wurde das feste Orange durch die Variable ersetzt */
     background-image: 
         radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--orange), transparent 94%) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--orange), transparent 96%) 0%, transparent 40%);
@@ -66,14 +69,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    border-bottom: 2px solid var(--orange); /* VARIABLE EINGESETZT */
+    border-bottom: 2px solid var(--orange);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .logo {
-    font-family: 'Rostex', sans-serif;
+    font-family: 'Rostex', sans-serif !important;
     font-size: 28px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -81,7 +84,7 @@ header {
 }
 
 .logo span {
-    font-family: 'Rostex', sans-serif;
+    font-family: 'Rostex', sans-serif !important;
     color: var(--orange);
 }
 
@@ -97,13 +100,13 @@ header {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Arial Black', Impact, sans-serif;
+    font-family: var(--dynamic-font);
 }
 
 .login-btn:hover {
     background-color: var(--orange);
     color: #FAF9F6;
-    box-shadow: 0 0 15px var(--orange); /* VARIABLE EINGESETZT */
+    box-shadow: 0 0 15px var(--orange);
 }
 
 .main-content {
@@ -126,7 +129,7 @@ header {
 }
 
 .hero-text h1 {
-    font-family: 'Arial Black', Impact, sans-serif;
+    font-family: var(--dynamic-font);
     font-size: 56px;
     letter-spacing: -1px;
     line-height: 1.1;
@@ -142,7 +145,7 @@ header {
     color: var(--orange);
     letter-spacing: 1px;
     margin-bottom: 15px;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: var(--dynamic-font);
     font-weight: 700;
 }
 
@@ -163,7 +166,7 @@ header {
     background-color: rgba(250, 249, 246, 0.02);
     border-radius: 12px;
     padding: 40px;
-    border: 1px solid var(--orange); /* VARIABLE EINGESETZT */
+    border: 1px solid var(--orange);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
@@ -184,23 +187,6 @@ header {
     letter-spacing: 1px;
 }
 
-.setting-item select {
-    background-color: #0B1215;
-    color: #FAF9F6;
-    border: 1px solid var(--orange); /* VARIABLE EINGESETZT */
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 6px;
-    outline: none;
-    cursor: pointer;
-    transition: border-color 0.3s;
-}
-
-.setting-item select:focus {
-    border-color: var(--orange);
-    box-shadow: 0 0 10px var(--orange); /* VARIABLE EINGESETZT */
-}
-
 .settings-actions {
     margin-top: 15px;
     display: flex;
@@ -217,6 +203,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s;
+    font-family: var(--dynamic-font);
 }
 
 .reset-btn:hover {
@@ -240,17 +227,6 @@ footer {
     opacity: 0.6;
 }
 
-.footer-links a {
-    color: inherit;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: var(--orange);
-}
-
 .custom-color-area {
     margin-top: 20px;
     padding: 20px;
@@ -271,22 +247,23 @@ footer {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-.custom-color-area input, 
-.custom-color-area select {
+.custom-color-area input {
     background: #0B1215;
     color: #FAF9F6;
     border: 1px solid rgba(var(--orange-rgb), 0.5);
-    padding: 10px;
+    padding: 12px;
     border-radius: 6px;
     outline: none;
     flex: 1;
     min-width: 120px;
+    font-family: var(--dynamic-font);
+    font-size: 16px;
 }
 
-.custom-color-area input:focus, 
-.custom-color-area select:focus {
+.custom-color-area input:focus {
     border-color: var(--orange);
     box-shadow: 0 0 5px rgba(var(--orange-rgb), 0.3);
 }
@@ -295,14 +272,106 @@ footer {
     background: var(--orange);
     color: #0B1215;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    font-family: var(--dynamic-font);
+    font-size: 16px;
 }
 
 .add-btn:hover {
     filter: brightness(1.2);
     box-shadow: 0 0 10px var(--orange);
+}
+
+/* --- BRAND NEW ULTIMATE CUSTOM SELECT STYLING --- */
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.select-selected {
+    background-color: #0B1215;
+    color: #FAF9F6;
+    border: 1px solid var(--orange);
+    padding: 12px;
+    padding-right: 40px; /* Platzhalter für den Pfeil */
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: var(--dynamic-font);
+}
+
+.select-selected:hover {
+    border-color: var(--orange);
+    box-shadow: 0 0 10px rgba(var(--orange-rgb), 0.4);
+}
+
+/* Der perfekt zentrierte Pfeil rechts */
+.select-selected:after {
+    content: '▼';
+    font-size: 10px;
+    color: var(--orange);
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #0B1215;
+    border: 1px solid var(--orange);
+    border-radius: 6px;
+    top: 115%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+}
+
+.select-items div {
+    color: #FAF9F6;
+    padding: 12px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid rgba(var(--orange-rgb), 0.15);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.select-items div:last-child {
+    border-bottom: none;
+}
+
+.select-items div:hover {
+    background-color: rgba(var(--orange-rgb), 0.15);
+    color: var(--orange);
+}
+
+.select-hide {
+    display: none;
+}
+
+/* Stylischer Farbkreis-Vorschaupunkt */
+.color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(250, 249, 246, 0.25);
+    flex-shrink: 0;
 }
