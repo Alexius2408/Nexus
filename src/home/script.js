@@ -1,4 +1,3 @@
-// Funktion zum Laden und Applizieren der Einstellungen aus der Einstellungsseite
 function loadSettings() {
     const savedBg = localStorage.getItem('nexus-bg') || '#0B1215';
     const savedText = localStorage.getItem('nexus-text') || '#FAF9F6';
@@ -12,12 +11,13 @@ function loadSettings() {
     document.documentElement.style.setProperty('--orange-rgb', savedAccentRgb);
 }
  
-// Einstellungen direkt ausführen
 loadSettings();
  
 const user_logo = document.getElementById("user-logo")
 const username = localStorage.getItem("currentUser")
 const textarea = document.getElementById("messageInput");
+const delAcountBtn = document.getElementById("delAcountBtn")
+const logoutBtn = document.getElementById("logoutBtn")
  
 function createUserProfie() {
     const p = document.createElement("p")
@@ -40,3 +40,29 @@ function autoResizeTextbox() {
 textarea.addEventListener("input", autoResizeTextbox);
 autoResizeTextbox();
 createUserProfie()
+
+
+user_logo.addEventListener("click", () => {
+  document.getElementById("myDropdown").classList.toggle("show");
+});
+
+window.addEventListener("click", (event) => {
+  if (!event.target.closest('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (const dropdown of dropdowns) {
+      dropdown.classList.remove('show');
+    }
+  }
+});
+
+logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("currentRoom")
+    localStorage.removeItem("currentUser")
+})
+
+delAcountBtn.addEventListener("click", () => {
+    localStorage.removeItem(localStorage.getItem("currentUser"))
+    localStorage.removeItem(localStorage.getItem("currentUser") + "_messages")
+    localStorage.removeItem("currentRoom")
+    localStorage.removeItem("currentUser")
+})
