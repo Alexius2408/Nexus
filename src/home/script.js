@@ -1,5 +1,6 @@
 const user_logo = document.getElementById("user-logo")
 const username = localStorage.getItem("currentUser")
+const textarea = document.getElementById("messageInput");
 
 function createUserProfie() {
     const p = document.createElement("p")
@@ -10,5 +11,21 @@ function createUserProfie() {
 
     user_logo.appendChild(p)
 }
+
+function autoResizeTextbox() {
+    textarea.style.height = "auto";
+
+    if (textarea.scrollHeight <= 200) {
+        textarea.style.height = textarea.scrollHeight + "px";
+        textarea.style.overflowY = "hidden";
+    } else {
+        textarea.style.height = "200px";
+        textarea.style.overflowY = "auto";
+    }
+}
+
+textarea.addEventListener("input", autoResizeTextbox);
+
+autoResizeTextbox();
 
 createUserProfie()
