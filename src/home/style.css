@@ -491,3 +491,13 @@ nav {
 #sendBtn:active {
   transform: scale(0.97);
 }
+
+#messageInput {
+    width: 300px;
+    min-height: 40px;
+    max-height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+    overflow-y: hidden;
+}
