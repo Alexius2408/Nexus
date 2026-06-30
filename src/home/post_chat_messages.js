@@ -39,7 +39,7 @@ async function prepareMessage() {
   inputField.value = ""
 }
 
-document.addEventListener("keydown", function (event) {
+inputField.addEventListener("keydown", function (event) {
   if (event.key === "Enter" && !event.shiftKey) {
     event.preventDefault();
     prepareMessage()
