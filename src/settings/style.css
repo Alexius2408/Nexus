@@ -29,7 +29,7 @@
     --orange: #ff6600;
     --gray-text: #a0a0a0;
     
-    /* Dynamische Variablen für JS */
+
     --dynamic-bg: #0B1215;
     --dynamic-text: #FAF9F6;
     --dynamic-font: 'Segoe UI', Arial, sans-serif;
@@ -286,7 +286,6 @@ footer {
     box-shadow: 0 0 10px var(--orange);
 }
 
-/* --- BRAND NEW ULTIMATE CUSTOM SELECT STYLING --- */
 .custom-select {
     position: relative;
     width: 100%;
@@ -297,7 +296,7 @@ footer {
     color: #FAF9F6;
     border: 1px solid var(--orange);
     padding: 12px;
-    padding-right: 40px; /* Platzhalter für den Pfeil */
+    padding-right: 40px;
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
@@ -315,7 +314,6 @@ footer {
     box-shadow: 0 0 10px rgba(var(--orange-rgb), 0.4);
 }
 
-/* Der perfekt zentrierte Pfeil rechts */
 .select-selected:after {
     content: '▼';
     font-size: 10px;
@@ -366,7 +364,7 @@ footer {
     display: none;
 }
 
-/* Stylischer Farbkreis-Vorschaupunkt */
+
 .color-dot {
     width: 14px;
     height: 14px;

@@ -8,48 +8,40 @@ function hexToRgb(hex) {
     return `${r}, ${g}, ${b}`;
 }
 
-// Universelle Funktion zur Steuerung eines Custom Dropdowns
 function setupCustomSelect(selectId, selectedId, itemsId, storageKey, cssVar, isAccent = false, onChangeCallback = null) {
     const selectedEl = document.getElementById(selectedId);
     const itemsEl = document.getElementById(itemsId);
     
     if (!selectedEl || !itemsEl) return;
 
-    // Öffnen / Schließen
     selectedEl.addEventListener('click', function(e) {
         e.stopPropagation();
-        // Schließe alle anderen Dropdowns, bevor dieses geöffnet wird
         document.querySelectorAll('.select-items').forEach(el => {
             if (el !== itemsEl) el.classList.add('select-hide');
         });
         itemsEl.classList.toggle('select-hide');
     });
 
-    // Event-Delegation für die Auswahl eines Elements
     itemsEl.addEventListener('click', function(e) {
         const item = e.target.closest('div[data-value]');
         if (!item) return;
         
         const value = item.getAttribute('data-value');
         
-        // UI Text und HTML (inkl. Color Dot) kopieren
         selectedEl.innerHTML = item.innerHTML;
         selectedEl.setAttribute('data-value', value);
         itemsEl.classList.add('select-hide');
         
-        // Speichern und im System applizieren
         if (storageKey && cssVar) {
             saveSetting(storageKey, value, cssVar, isAccent);
         }
         
-        // Optionaler Callback (z.B. für die Live-Schriftart im Dropdown-Header)
         if (onChangeCallback) {
             onChangeCallback(value);
         }
     });
 }
 
-// Hilfsfunktion zum Aktualisieren des UI-Zustands beim Laden der Seite
 function updateCustomSelectDisplay(selectedId, itemsId, value) {
     const selectedEl = document.getElementById(selectedId);
     const itemsEl = document.getElementById(itemsId);
@@ -83,17 +75,14 @@ function loadSettings() {
     document.documentElement.style.setProperty('--orange', savedAccent);
     document.documentElement.style.setProperty('--orange-rgb', savedAccentRgb);
 
-    // WICHTIG: Custom Colors zuerst laden, damit sie im DOM existieren
     loadCustomColors();
 
-    // Anzeigen synchronisieren
     updateCustomSelectDisplay('select-selected-bg', 'select-items-bg', savedBg);
     updateCustomSelectDisplay('select-selected-text', 'select-items-text', savedText);
     updateCustomSelectDisplay('select-selected-accent', 'select-items-accent', savedAccent);
     updateCustomSelectDisplay('select-selected-font', 'select-items-font', savedFont);
     updateCustomSelectDisplay('select-selected-target', 'select-items-target', 'bg');
 
-    // Schriftart des Font-Dropdown-Headers live setzen
     document.getElementById('select-selected-font').style.fontFamily = savedFont;
 }
 
@@ -110,7 +99,6 @@ function loadCustomColors() {
     });
 }
 
-// Core Logik zum dynamischen Erstellen einer Custom Color
 window.addCustomColor = function() {
     const name = document.getElementById('custom-name').value;
     const hex = document.getElementById('custom-hex').value;
@@ -135,11 +123,9 @@ window.addCustomColor = function() {
     }
 };
 
-// Initialisierung aller Steuerungen nach DOM-Load
 document.addEventListener('DOMContentLoaded', () => {
     loadSettings();
 
-    // Setup aller fünf Custom Dropdowns
     setupCustomSelect('custom-bg-select', 'select-selected-bg', 'select-items-bg', 'nexus-bg', '--dynamic-bg');
     setupCustomSelect('custom-text-select', 'select-selected-text', 'select-items-text', 'nexus-text', '--dynamic-text');
     setupCustomSelect('custom-accent-select', 'select-selected-accent', 'select-items-accent', 'nexus-accent', '--orange', true);
@@ -148,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     setupCustomSelect('custom-target-select', 'select-selected-target', 'select-items-target', null, null);
 
-    // Globaler Klick-Listener schließt alle offenen Dropdowns bei Klick ins Leere
     document.addEventListener('click', () => {
         document.querySelectorAll('.select-items').forEach(el => el.classList.add('select-hide'));
     });
