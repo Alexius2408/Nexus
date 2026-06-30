@@ -20,6 +20,11 @@
     src: url('../assets/fonts/Orbitron/Orbitron_Medium.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Old';
+    src: url('../assets/fonts/cloister-black/CloisterBlack.ttf') format('truetype');
+}
+
 :root {
     /* Diese Variable wird durch dein JS überschrieben, wenn du die Farbe änderst */
     --orange: #ff6600;
