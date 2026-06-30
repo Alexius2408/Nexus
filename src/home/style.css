@@ -10,6 +10,7 @@
   --black: #0b1215;
   --box-bg: #202020;
   --bg: #000000;
+  --light-black: #232323 ;
   --white: #faf9f6;
   --gray-text: #a0a0a0;
   --dynamic-text: #ff6600;
@@ -502,4 +503,51 @@ nav {
     resize: none;
     overflow-y: hidden;
     transition: height 0.2s ease;
+}
+
+#chat_messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat_message {
+  margin: 20px;
+  background-color: var(--bg);
+  padding: 10px;
+  padding-right: 100px;
+  /* border-radius: 0 15px 15px 15px; For Other messages */
+  /* border-radius: 15px 0 15px 15px; For my Messages */
+  width: fit-content;
+  max-width: 70%;
+  height: fit-content;
+  word-break: break-word;
+  overflow-wrap: break-word;
+    transition: background-color 0.3s ease, scale 0.3s ease;
+}
+
+.chat_message:hover {
+  background-color: color-mix(in srgb, var(--bg), #844f29 20%);
+  scale: 1.003;
+}
+
+.header_message {
+  display: flex;
+  background: var(--light-black);
+  margin-bottom: 10px;
+  min-width: 0;
+}
+
+.header_message p {
+  white-space: normal;
+  font-size: 0.65rem;
+  transform: translateY(10px);
+  margin-left: 10px;
+}
+.header_message h3,
+.header_message p {
+  min-width: 0;
+}
+
+.text_message {
+  white-space: normal;
 }
