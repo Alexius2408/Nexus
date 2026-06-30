@@ -10,13 +10,13 @@ const passwordVisibilityToggle = document.querySelectorAll(
 );
 
 async function sha256(text) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(text);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
 
-    return [...new Uint8Array(hashBuffer)]
-        .map(b => b.toString(16).padStart(2, "0"))
-        .join("");
+  return [...new Uint8Array(hashBuffer)]
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 }
 
 passwordVisibilityToggle.forEach((element) => {
@@ -57,19 +57,31 @@ async function login(event) {
   setLoginButton();
   const tryUsername = localStorage.getItem(usernameInput.value);
   const inputPassword = passwordInput.value;
-  const shaPassword = await sha256(inputPassword)
+  const shaPassword = await sha256(inputPassword);
   if (tryUsername) {
     if (tryUsername === shaPassword) {
-      window.location.href = "../home/home.html"
-      localStorage.setItem("currentUser", usernameInput.value)
+      let username = usernameInput.value;
+      localStorage.setItem("currentUser", username);
+      const design_data = JSON.parse(localStorage.getItem(username + "_designs"));
+      if (design_data) {
+        localStorage.setItem("nexus-accent", design_data.nexus_accent);
+        localStorage.setItem("nexus-accent-rgb", design_data.nexus_accent_rgb);
+        localStorage.setItem("nexus-bg", design_data.nexus_bg);
+        localStorage.setItem("nexus-font", design_data.nexus_font);
+        localStorage.setItem("nexus-text", design_data.nexus_text);
+        if (design_data.my_custom_colors) {
+          localStorage.setItem("my-custom-colors", design_data.my_custom_colors);
+        }
+      }
+      window.location.href = "../home/home.html";
       return;
     } else {
       failedLoginText.classList.remove("hidden");
     }
   } else {
     localStorage.setItem(usernameInput.value, shaPassword);
-    localStorage.setItem("currentUser", usernameInput.value)
-    window.location.href = "../home/home.html"
+    localStorage.setItem("currentUser", usernameInput.value);
+    window.location.href = "../home/home.html";
     return;
   }
 }
@@ -87,5 +99,5 @@ window.addEventListener("keydown", async (event) => {
 setLoginButton();
 
 backBtn.addEventListener("click", () => {
-  window.location.href = "../main.html"
-})
+  window.location.href = "../main.html";
+});
