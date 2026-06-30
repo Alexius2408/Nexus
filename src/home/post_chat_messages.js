@@ -36,11 +36,13 @@ async function prepareMessage() {
   data[roomId].push(response.id);
 
   localStorage.setItem(storageKey, JSON.stringify(data));
+  inputField.value = ""
 }
 
-sendBtn.addEventListener("keydown", async (event) => {
-  if (event.key === "Enter") {
-    await prepareMessage()
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && !event.shiftKey) {
+    event.preventDefault();
+    prepareMessage()
   }
 });
 

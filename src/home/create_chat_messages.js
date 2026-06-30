@@ -17,11 +17,11 @@ async function getRoomMessages(roomId) {
 
 
 function createMyMessages(message) {
-
+  console.log(message);
 }
 
 function createOtherMessages(message) {
-
+  console.log(message);
 }
 
 

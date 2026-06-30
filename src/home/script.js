@@ -15,11 +15,12 @@ function createUserProfie() {
 function autoResizeTextbox() {
     textarea.style.height = "auto";
 
-    if (textarea.scrollHeight <= 200) {
+    if (textarea.scrollHeight <= 125) {
         textarea.style.height = textarea.scrollHeight + "px";
         textarea.style.overflowY = "hidden";
     } else {
-        textarea.style.height = "200px";
+        console.log("fixed")
+        textarea.style.height = "125px";
         textarea.style.overflowY = "auto";
     }
 }
