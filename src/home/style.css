@@ -32,6 +32,7 @@
   --dynamic-text: #ff6600;
   --dynamic-font: "Arial Black", Impact, sans-serif;
   --sidebar-bg: color-mix(in srgb, var(--bg), #000 50%);
+  --box-bg: color-mix(in srgb, var(--sidebar-bg), #ffffff 10%);
 }
 .hidden {
   display: none !important;
