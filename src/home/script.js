@@ -65,4 +65,10 @@ delAcountBtn.addEventListener("click", () => {
     localStorage.removeItem(localStorage.getItem("currentUser") + "_messages")
     localStorage.removeItem("currentRoom")
     localStorage.removeItem("currentUser")
+    localStorage.removeItem("nexus-accent");
+    localStorage.removeItem("nexus-accent-rgb");
+    localStorage.removeItem("nexus-bg");
+    localStorage.removeItem("nexus-font");
+    localStorage.removeItem("nexus-text");
+    location.reload();
 })
