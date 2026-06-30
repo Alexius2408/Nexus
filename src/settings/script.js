@@ -155,7 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 resetBtn.addEventListener('click', () => {
-    localStorage.clear();
+    localStorage.removeItem("nexus-accent");
+    localStorage.removeItem("nexus-accent-rgb");
+    localStorage.removeItem("nexus-bg");
+    localStorage.removeItem("nexus-font");
+    localStorage.removeItem("nexus-text");
     location.reload();
 });
 
