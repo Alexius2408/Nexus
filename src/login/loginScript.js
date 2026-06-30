@@ -1,7 +1,8 @@
 const loginButton = document.getElementById("loginButton");
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
-const failedLoginText = document.getElementById("loginFailed")
+const failedLoginText = document.getElementById("loginFailed");
+const backBtn = document.getElementById("backButton");
 
 const inputs = document.querySelectorAll("input");
 const passwordVisibilityToggle = document.querySelectorAll(
@@ -84,3 +85,7 @@ window.addEventListener("keydown", async (event) => {
 });
 
 setLoginButton();
+
+backBtn.addEventListener("click", () => {
+  window.location.href = "../main.html"
+})

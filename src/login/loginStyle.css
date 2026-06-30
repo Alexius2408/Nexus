@@ -242,3 +242,16 @@ button:disabled {
     margin-top: 2rem;
   }
 }
+
+#backButton {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  display: block;
+  margin-right: auto;
+  animation: scale 0.3s ease;
+}
+
+#backButton:hover {
+  scale: 1.1;
+}
